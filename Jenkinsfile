@@ -5,8 +5,10 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                echo "Building the job"
+                timeout(time: 5 , unit: 'SECONDS'){
+                 echo "Building the job"
                 sleep 10 
+                }
             }
         }
     }
