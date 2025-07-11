@@ -3,12 +3,10 @@ pipeline{
         label 'java-slave'
     }
     stages{
-        stage('Build'){
+        stage('Maven'){
             steps{
-                timeout(time: 5 , unit: 'SECONDS'){
-                 echo "Building the job"
-                sleep 10 
-                }
+                echo "This is Build stage"
+                sh "mvn --version"
             }
         }
     }
