@@ -1,24 +1,19 @@
 pipeline{
     agent any
-    tools{
-        maven 'maven-3.9.5'
-    }
     stages{
-        stage('Maven'){
+        stage('Build'){
             steps{
-                echo "This is Build stage"
-                sh "mvn --version"
-                // by deafult mavan 3.8.8
-                // java 21
+                echo "Build stage from main branch"
             }
         }
-        stage('Tools'){
-            tools{
-                jdk 'JDK-17'
-            }
+        stage('scan'){
             steps{
-                echo "show maven version"
-                sh "mvn --version"
+                echo "Scan stage from main branch"
+            }
+        }
+        stage('deploy'){
+            steps{
+                echo "deploy stage from main branch"
             }
         }
     }
